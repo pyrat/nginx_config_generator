@@ -45,7 +45,7 @@
     root <%= (config['root'][ site['root'] || 'default' ] || site['root']) % name %>;
 
     # vhost specific access log
-    access_log  logs/<%= name %>.access.log  main;
+    access_log  /var/log/<%= name %>.access.log;
 
     #Set the max size for file uploads to 50Mb
     client_max_body_size  50M;
