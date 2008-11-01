@@ -16,5 +16,10 @@ You can set two environment variables:
 By default, generate_nginx_config won't overwrite your OUT file.  To rock this behavior,
 pass in --overwrite or -o or -y or --force or -f.  Whichever.
 
+Vhosts:
+If you have installed nginx on ubuntu via apt-get / aptitude or wish to only generate virtual hosts
+instead of a whole config pass in --vhosts, --vhost or --ubuntu. This spits out a vhosts file
+which you can pop in your sites-available directory.
+
 >> Chris Wanstrath
 => chris[at]ozmm[dot]org
