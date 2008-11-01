@@ -23,6 +23,8 @@ template = if custom_template_index = (ARGV.index('--template') || ARGV.index('-
   ARGV.delete_at(custom_template_index) # delete the --argument
   ARGV.delete_at(custom_template_index) # and its value
   custom
+elsif ARGV.include? '--vhosts'
+  file:'vhosts.erb'
 else
   file:'nginx.erb'
 end
