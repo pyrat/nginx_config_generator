@@ -19,7 +19,8 @@ vhost_mode = %w(--vhosts --vhost --ubuntu).any? { |f| ARGV.delete(f)}
 
 config   = YAML.load(ERB.new(File.read(env_in || ARGV.shift || 'config.yml')).result)
 template = if vhost_mode
-file:'vhosts.erb'
+  env_out = 'vhosts'
+  file:'vhosts.erb'
 elsif custom_template_index = (ARGV.index('--template') || ARGV.index('-t'))
   custom = ARGV[custom_template_index+1]
   error "=> Specified template file #{custom} does not exist." unless File.exist?(custom)
