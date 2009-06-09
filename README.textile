@@ -1,6 +1,7 @@
-A work in progress.  
+!http://www.nginx.eu/images/nginx_small.png!
 
-Check it: 
+
+Check out original post: 
   http://errtheblog.com/post/3908
 
 Use it: 
