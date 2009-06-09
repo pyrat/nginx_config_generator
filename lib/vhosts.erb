@@ -10,6 +10,21 @@
   }
 <% end %>
 
+
+<% Array(config['sites']).each do |name, site| %>
+  <% next unless site['upstream'] %>
+  upstream <%= name %> {
+  <% if site['fair'] %>
+    fair;
+  <% end %>
+  <% Array(site['upstream'] || site['upstreams']).each do |server| %>
+    server <%= server %>;
+  <% end %>
+  }
+<% end %>
+
+
+
 <% %w(sites ssl_sites).each do |site_type| %>
 	
 <% Array(config[site_type]).each do |name, site| %>
